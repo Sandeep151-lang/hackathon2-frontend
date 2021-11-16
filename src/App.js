@@ -5,14 +5,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
 import CreaProduct from './components/CreaProduct';
-// import data from './components/data';
 import axios from 'axios';
-import { useHistory } from 'react-router';
+
 import ProductDetails from './components/ProductDetails';
 export const MyContext = React.createContext();
 
 function App() {
-  const history = useHistory();
+
   const [data, setdata] = useState([]);
   const [cartItems, setCartItems] = useState([]);
 
@@ -22,11 +21,10 @@ function App() {
 
   }
 
-  const url = `http://localhost:5000/getProduct`;
+  const url = `https://hackathon2-back.herokuapp.com/getProduct`;
   const userdata = async () => {
     try {
       const d = await axios.get(url);
-      console.log(d.data.item)
       setdata(d.data.item);
 
     } catch (err) {
@@ -40,6 +38,7 @@ function App() {
 
   useEffect(() => {
     userdata();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return <>
     <Router>
