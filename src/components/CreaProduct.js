@@ -23,7 +23,7 @@ const CreaProduct = () => {
     const buy_Product = async (e) => {
         e.preventDefault();
         try {
-            const url = `https://hackathon2-back.herokuapp.com/createProduct`;
+            const url = `https://sand92177.herokuapp.com/createProduct`;
             const d = await axios.post(url, buy);
             setbuy(d.data)
         } catch {

@@ -39,7 +39,7 @@ const ProductDetails = () => {
     const buy_Product = async (e) => {
         e.preventDefault();
         try {
-            const url = `https://hackathon2-back.herokuapp.com/buyProduct`;
+            const url = `https://sand92177.herokuapp.com/buyProduct`;
             const d = await axios.post(url, buy);
 
             setbuy(d.data)
